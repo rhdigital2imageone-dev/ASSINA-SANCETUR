@@ -279,12 +279,13 @@ class RenomeadorDatas(ctk.CTk):
                 bloco_entrega = bloco_entrega[:300]
 
             datas_entrega = self.regex_data_br.findall(bloco_entrega)
-            if len(datas_entrega) != 1:
+            datas_unicas = set(datas_entrega)
+            if len(datas_unicas) != 1:
                 raise ValueError(
                     "A ficha deve conter uma unica data de entrega identificavel."
                 )
 
-            data_entrega = self._data_validada(datas_entrega[0])
+            data_entrega = self._data_validada(datas_unicas.pop())
             return "EPI", codigos_epi.pop(), data_entrega
 
         if periodos:

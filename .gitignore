@@ -1,0 +1,17 @@
+# Python environments and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.idea/
+.vscode/
+
+# PyInstaller output
+build/
+dist/
+*.spec.bak
+
+# Local virtual environment metadata
+pip-wheel-metadata/
